@@ -1,0 +1,19 @@
+{
+    "title": "Events",
+    "description": "Events ",
+    "alias": "events",
+    "icon": "fa-picture-o",
+    "home_link": "events\/events",
+    "is_core": "1",
+    "menulist": [{
+            "title": "Events",
+            "alias": "admin_events_events",
+            "url": "admin/events/events",
+            "children": []
+        }, {
+            "title": "Categories",
+            "alias": "admin_events_categories",
+            "url": "admin/events/categories",
+            "children": []
+        }]
+}

@@ -1,0 +1,37 @@
+{# empty Twig template #}
+{% import "form.macro.twig" as forms %}
+
+<div class="cms-content">
+    <h1 class="component-header">{{ item.title }} </h1>
+
+    <small>
+        <i class="fa fa-clock-o"> Posted On:</i>{{ item.date_created|date('Y-m-d') }} 
+        &nbsp;&nbsp;
+    </small>
+
+    <div class="alert alert-default">
+        <div class="col-sm-6">
+            <b>From:</b>
+            {{ item.start_date|date('Y M d') }}
+        </div>
+        <div class="col-sm-6">
+            <b>To:</b>
+            {{ item.start_date|date('Y M d') }}
+        </div>
+    </div>
+
+    {{ item.description|raw }}
+
+    {% if item.image %}
+        <div class="img-wrapper text-center">
+            <img src="{{ resized_image(item.image_file, 700, null , 'fit') }}" alt="{{ item.title }}" title="{{ item.title }}">
+        </div> 
+    {% endif %}
+
+
+    {{ forms.input('id', 'hidden', item.id) }}
+
+    <div class="clearfix"></div>
+</div>
+
+

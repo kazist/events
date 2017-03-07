@@ -1,0 +1,10 @@
+{
+    "EventsEvents": {
+        "namespace": "Events\\Events",
+        "controller": "EventsController"
+    },
+    "EventsCategories": {
+        "namespace": "Events\\Categories",
+        "controller": "CategoriesController"
+    }
+}

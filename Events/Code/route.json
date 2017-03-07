@@ -1,0 +1,246 @@
+{
+    "frontend": [{
+            "title": "Event List",
+            "description": "Management of Events.",
+            "controller": "Events\\Events\\Code\\Controllers\\EventsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "events.events",
+            "route": "events/events",
+            "seo_url": "events",
+            "arguments": "",
+            "keywords": "event, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Event Detail: {{ item.name }}",
+            "description": "Event Detail: {{ item.name }}",
+            "controller": "Events\\Events\\Code\\Controllers\\EventsController::detailAction",
+            "unique_name": "events.events.detail",
+            "route": "events/events/detail/{id}",
+            "seo_url": "events/{slug}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "seo_arguments": {
+                "slug": null
+            },
+            "keywords": "event, detail, {{ item.title }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+             }, {
+            "title": "Contact Edit: {{ item.name }}",
+            "description": "Contact Edit: {{ item.name }}",
+            "controller": "Events\\Events\\Code\\Controllers\\EventsController::editAction",
+            "unique_name": "events.events.edit",
+            "route": "events/events/edit/{id}",
+            "permissions": "can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "events, edit, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_write", "can_writeown"],
+                "ADMIN": ["can_write", "can_writeown"],
+                "MODERATOR": ["can_write", "can_writeown"],
+                "USER": ["can_writeown"]
+            }
+        }, {
+            "title": "Add Events ",
+            "description": "Add Events  .",
+            "controller": "Events\\Events\\Code\\Controllers\\EventsController::addAction",
+            "unique_name": "events.events.add",
+            "route": "events/events/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "events, add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"],
+                "MODERATOR": ["can_add"],
+                "USER": ["can_add"]
+            }
+        }, {
+            "title": "Events Save: {{ item.name }}",
+            "description": "Events Save: {{ item.name }}",
+            "controller": "Events\\Events\\Code\\Controllers\\EventsController::saveAction",
+            "unique_name": "events.events.save",
+            "route": "events/events/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "events, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"],
+                "MODERATOR": ["can_add", "can_write", "can_writeown"],
+                "USER": ["can_add", "can_writeown"]
+            }
+        }, {
+            "title": "Events Delete: {{ item.name }}",
+            "description": "Events Delete: {{ item.name }}",
+            "controller": "Events\\Events\\Code\\Controllers\\EventsController::deleteAction",
+            "unique_name": "events.events.delete",
+            "route": "events/events/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "events, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"],
+                "MODERATOR": ["can_delete", "can_deleteown"],
+                "USER": ["can_deleteown"]
+            }
+        }]
+    ,
+    "backend": [{
+            "title": "General Tasks",
+            "description": "General Tasks.",
+            "controller": "Events\\Events\\Code\\Controllers\\Admin\\EventsController::taskAction",
+            "unique_name": "admin.events.events.task",
+            "route": "admin/events/events/task",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": "",
+            "keywords": "events, task",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Event List",
+            "description": "Management of Events.",
+            "controller": "Events\\Events\\Code\\Controllers\\Admin\\EventsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "admin.events.events",
+            "route": "admin/events/events",
+            "arguments": "",
+            "keywords": "event, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Event ",
+            "description": "Add Event  .",
+            "controller": "Events\\Events\\Code\\Controllers\\Admin\\EventsController::addAction",
+            "unique_name": "admin.events.events.add",
+            "route": "admin/events/events/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "event, add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"]
+            }
+        }, {
+            "title": "Edit Event {{ item.name }}",
+            "description": "Edit Event {{ item.name }}.",
+            "controller": "Events\\Events\\Code\\Controllers\\Admin\\EventsController::editAction",
+            "unique_name": "admin.events.events.edit",
+            "route": "admin/events/events/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "event, edit, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Event Detail: {{ item.name }}",
+            "description": "Event Detail: {{ item.name }}",
+            "controller": "Events\\Events\\Code\\Controllers\\Admin\\EventsController::detailAction",
+            "unique_name": "admin.events.events.detail",
+            "route": "admin/events/events/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "event, detail, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Event Delete: {{ item.name }}",
+            "description": "Event Delete: {{ item.name }}",
+            "controller": "Events\\Events\\Code\\Controllers\\Admin\\EventsController::deleteAction",
+            "unique_name": "admin.events.events.delete",
+            "route": "admin/events/events/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "event, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"]
+            }
+        }, {
+            "title": "Event Save: {{ item.name }}",
+            "description": "Event Save: {{ item.name }}",
+            "controller": "Events\\Events\\Code\\Controllers\\Admin\\EventsController::saveAction",
+            "unique_name": "admin.events.events.save",
+            "route": "admin/events/events/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "event, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }]
+} 	
