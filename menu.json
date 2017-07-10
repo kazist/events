@@ -2,18 +2,20 @@
     "title": "Events",
     "description": "Events ",
     "alias": "events",
-    "icon": "fa-picture-o",
+    "icon": "fa fa-calendar",
     "home_link": "events\/events",
     "is_core": "1",
     "menulist": [{
             "title": "Events",
             "alias": "admin_events_events",
             "url": "admin/events/events",
+            "icon": "fa fa-calendar-o",
             "children": []
         }, {
             "title": "Categories",
             "alias": "admin_events_categories",
             "url": "admin/events/categories",
+            "icon": "fa fa-navicon",
             "children": []
         }]
 }
