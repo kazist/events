@@ -4,6 +4,7 @@
     "alias": "events",
     "icon": "fa fa-calendar",
     "home_link": "events\/events",
+    "path": "applications/Events",
     "is_core": "1",
     "menulist": [{
             "title": "Events",
