@@ -5,18 +5,18 @@
     <h1 class="component-header">{{ item.title }} </h1>
 
     <small>
-        <i class="fa fa-clock-o"> Posted On:</i>{{ item.date_created|date('Y-m-d') }} 
+        <i class="fa fa-clock-o"> Posted On:</i>{{ item.date_created|date('Y-m-d',  document.timezone) }} 
         &nbsp;&nbsp;
     </small>
 
     <div class="alert alert-default">
         <div class="col-sm-6">
             <b>From:</b>
-            {{ item.start_date|date('Y M d') }}
+            {{ item.start_date|date('Y M d',  document.timezone) }}
         </div>
         <div class="col-sm-6">
             <b>To:</b>
-            {{ item.start_date|date('Y M d') }}
+            {{ item.start_date|date('Y M d',  document.timezone) }}
         </div>
     </div>
 

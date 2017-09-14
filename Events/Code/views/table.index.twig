@@ -7,10 +7,10 @@
 <ul class="event-list">
     {%  for item in items %}
         <li>
-            <time datetime="{{ item.start_date|date('Y-m-d') }}">
-                <span class="day">{{ item.start_date|date('d') }}</span>
-                <span class="month">{{ item.start_date|date('M') }}</span>
-                <span class="year">{{ item.start_date|date('Y') }}</span>
+            <time datetime="{{ item.start_date|date('Y-m-d',  document.timezone) }}">
+                <span class="day">{{ item.start_date|date('d',  document.timezone) }}</span>
+                <span class="month">{{ item.start_date|date('M',  document.timezone) }}</span>
+                <span class="year">{{ item.start_date|date('Y',  document.timezone) }}</span>
             </time>
             <img alt="{{ item.title }}" src="{{ item.image_file }}" />
             <div class="info">
@@ -23,11 +23,11 @@
                 <ul>
                     <li style="width:50%;">
                         <b>From:</b>
-                        {{ item.start_date|date('Y M d') }}
+                        {{ item.start_date|date('Y M d',  document.timezone) }}
                     </li>
                     <li style="width:50%;">
                         <b>To:</b>
-                        {{ item.start_date|date('Y M d') }}
+                        {{ item.start_date|date('Y M d',  document.timezone) }}
                     </li>
                 </ul>
             </div>
